@@ -1,0 +1,9 @@
+client-vue/node_modules/
+client-vue/dist/
+backend-springboot/target/
+backend-springboot/reports/
+.env
+*.log
+.DS_Store
+__pycache__/
+*.pyc

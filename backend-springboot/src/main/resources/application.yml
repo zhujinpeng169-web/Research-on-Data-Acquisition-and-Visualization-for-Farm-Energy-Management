@@ -1,0 +1,43 @@
+# 逐行注释标记：已按业务语义处理，仅增加中文注释，不改变配置含义
+# 行注释：配置 Spring Boot 主框架相关参数。
+spring:
+  # 行注释：配置数据库连接信息，后端启动时根据这里连接 MySQL。
+  datasource:
+    # 行注释：配置数据库 JDBC 地址，也可以通过 DB_URL 环境变量覆盖。
+    url: ${DB_URL:jdbc:mariadb://127.0.0.1:3306/farm_energy?useUnicode=true&characterEncoding=UTF-8}
+    # 行注释：配置数据库用户名，也可以通过 DB_USERNAME 环境变量覆盖。
+    username: ${DB_USERNAME:farm_user}
+    # 行注释：配置数据库密码，也可以通过 DB_PASSWORD 环境变量覆盖。
+    password: ${DB_PASSWORD:farm123456}
+    # 行注释：指定 MariaDB/MySQL JDBC 驱动类，负责建立数据库连接。
+    driver-class-name: org.mariadb.jdbc.Driver
+  # 行注释：配置 JPA ORM 行为，让实体类自动映射数据库表。
+  jpa:
+    # 行注释：配置 Hibernate，它是 JPA 的具体实现。
+    hibernate:
+      # 行注释：允许后端根据实体类自动更新表结构。
+      ddl-auto: update
+    # 行注释：关闭 Open Session in View，避免接口层隐式持有数据库会话。
+    open-in-view: false
+    # 行注释：配置当前层级参数，供 Spring Boot 启动时读取。
+    properties:
+      # 行注释：配置 Hibernate，它是 JPA 的具体实现。
+      hibernate:
+        # 行注释：配置当前层级参数，供 Spring Boot 启动时读取。
+        format_sql: true
+  # 行注释：配置 JSON 序列化行为。
+  jackson:
+    # 行注释：设置 JSON 时间格式使用上海时区，和系统业务时间一致。
+    time-zone: Asia/Shanghai
+
+# 行注释：配置后端 Web 服务参数。
+server:
+  # 行注释：配置后端监听端口，默认是 9000。
+  port: ${SERVER_PORT:9000}
+
+# 行注释：配置项目自定义参数。
+app:
+  # 行注释：配置报表模块相关参数。
+  report:
+    # 行注释：配置 PDF 报告输出目录，也可以通过 REPORT_DIR 环境变量覆盖。
+    dir: ${REPORT_DIR:reports}
